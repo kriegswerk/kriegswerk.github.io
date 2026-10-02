@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- EDIT: title + description -->
+<title>About - Michael Kriegshauser</title>
+<meta name="description" content="Michael Kriegshauser is an award-winning multidisciplinary design leader.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ececea; --ink:#000; --mute:#6c6c6a; --line:#000;
+  --pad:clamp(16px,2.4vw,32px);
+  font-family:"Questrial",Helvetica,Arial,sans-serif;font-synthesis:none;
+}
+@media (prefers-color-scheme:dark){:root{--bg:#000;--ink:#ececea;--mute:#8a8a88;--line:#ececea}}
+*{box-sizing:border-box;margin:0}
+h1,h2,button{font-weight:400}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+
+/* top bar + hamburger */
+.bar{position:fixed;top:0;left:0;right:0;z-index:10;display:grid;grid-template-columns:1fr auto 1fr;gap:16px;
+  padding:calc(var(--pad) + env(safe-area-inset-top,0px)) var(--pad) 12px;mix-blend-mode:difference;color:#fff;font-size:14px;}
+.bar span{text-align:center}
+.bar a{justify-self:start}
+@media(max-width:600px){.bar span{display:none}.bar{grid-template-columns:1fr auto}}
+.burger{justify-self:end;width:40px;height:40px;margin:-8px -8px 0 0;background:none;border:0;color:inherit;cursor:pointer;position:relative}
+.burger i{position:absolute;left:8px;right:8px;height:2px;background:currentColor;transition:transform .3s cubic-bezier(.2,.7,.2,1),top .3s}
+.burger i:nth-child(1){top:14px}.burger i:nth-child(2){top:24px}
+.burger[aria-expanded="true"] i:nth-child(1){top:19px;transform:rotate(45deg)}
+.burger[aria-expanded="true"] i:nth-child(2){top:19px;transform:rotate(-45deg)}
+.burger:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+.menu{position:fixed;inset:0;z-index:9;background:var(--bg);display:flex;flex-direction:column;justify-content:flex-end;
+  padding:var(--pad);padding-bottom:calc(var(--pad) + env(safe-area-inset-bottom,0px));
+  clip-path:inset(0 0 100% 0);visibility:hidden;transition:clip-path .55s cubic-bezier(.7,0,.2,1),visibility 0s .55s}
+.menu.open{clip-path:inset(0);visibility:visible;transition:clip-path .55s cubic-bezier(.7,0,.2,1),visibility 0s}
+.menu a.big{text-transform:lowercase;letter-spacing:-.025em;font-size:clamp(3rem,11vw,10rem);line-height:.9;display:block}
+.menu a.big:hover,.menu a.big[aria-current]{color:var(--mute)}
+.menu .small{display:flex;gap:8px 28px;flex-wrap:wrap;margin-top:var(--pad);padding-top:12px;border-top:1px solid var(--line);font-size:14px}
+body.locked{overflow:hidden}
+
+/* page heading */
+.head{padding:calc(var(--pad)*5 + env(safe-area-inset-top,0px)) var(--pad) var(--pad);display:flex;align-items:flex-end;justify-content:space-between;gap:var(--pad);
+  border-bottom:1px solid var(--line)}
+.head h1{text-transform:lowercase;letter-spacing:-.025em;font-size:clamp(3rem,11vw,13rem);line-height:.92;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.head .count{font-size:14px;color:var(--mute);padding-bottom:.4em}
+@keyframes rise{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+
+/* about page */
+.intro-h{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:var(--pad);padding-bottom:calc(var(--pad) + env(safe-area-inset-bottom,0px))}
+.intro-h h1{font-size:clamp(3rem,11vw,13rem);line-height:.92;letter-spacing:-.035em;text-transform:lowercase;margin-bottom:var(--pad);animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.intro-h .hint{font-size:14px;color:var(--mute);border-top:1px solid var(--line);padding-top:12px}
+@keyframes rise{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+.sec{padding:calc(var(--pad)*2) var(--pad);border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:var(--pad)}
+.sec>h2{font-size:14px;color:var(--mute)}
+.bio p{font-size:clamp(1.1rem,1.7vw,1.5rem);line-height:1.4;max-width:60ch;margin-bottom:1.2em}
+.bio p.lead{font-size:clamp(1.8rem,4vw,3.8rem);line-height:1.05;letter-spacing:-.02em;max-width:20ch;margin-bottom:.8em}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:calc(var(--pad)*2) var(--pad)}
+.stat b{display:block;font-weight:400;font-size:clamp(3.5rem,9vw,9rem);line-height:.9;letter-spacing:-.04em;margin-bottom:12px}
+.stat p{max-width:38ch;font-size:15px;color:var(--mute)}
+.hist{list-style:none;padding:0}
+.hist li{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr) minmax(0,3fr);gap:16px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.hist li:first-child{border-top:1px solid var(--line)}
+.hist .r{font-size:clamp(1.2rem,2.2vw,2rem);letter-spacing:-.01em}
+.hist .o,.hist .y{font-size:14px;color:var(--mute)}
+.hist .y{text-align:right}
+.portrait{aspect-ratio:16/9;background:#999;overflow:hidden}
+.portrait img,.portrait video{width:100%;height:100%;object-fit:cover;display:block}
+.connect{list-style:none;padding:0;border-top:1px solid var(--line)}
+.connect a{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);font-size:clamp(1.4rem,3.4vw,3.2rem);letter-spacing:-.02em;text-transform:lowercase;transition:padding-left .3s cubic-bezier(.2,.7,.2,1)}
+.connect a span{font-size:14px;color:var(--mute);letter-spacing:0}
+.connect a:hover{padding-left:12px}
+@media(max-width:800px){.sec{grid-template-columns:1fr}.hist li{grid-template-columns:1fr auto}.hist .o{grid-column:1}.hist .y{grid-row:1;grid-column:2}}
+
+/* contact */
+footer{padding:calc(var(--pad)*2) var(--pad) calc(var(--pad) + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line)}
+.mail{display:block;text-transform:lowercase;letter-spacing:-.025em;
+  font-size:clamp(2rem,8.5vw,10rem);line-height:.9;margin:var(--pad) 0 calc(var(--pad)*2);overflow-wrap:anywhere}
+.mail:hover{color:var(--mute)}
+h2{font-size:14px;}
+.links{display:flex;flex-wrap:wrap;gap:8px 28px;}
+.fine{margin-top:calc(var(--pad)*2);display:flex;justify-content:space-between;font-size:14px;color:var(--mute)}
+</style>
+</head>
+<body>
+
+<!-- EDIT: name / role -->
+<header class="bar">
+  <a href="index.html">michael kriegshauser</a>
+  <span>creative director</span>
+  <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
+</header>
+
+<nav class="menu" id="menu" aria-label="Main">
+  <a class="big" href="projects.html">work</a>
+  <a class="big" href="about.html" aria-current="page">about</a>
+  <a class="big" href="contact.html">contact</a>
+  <div class="small"><a href="https://www.instagram.com/heykriegs/">Instagram</a><a href="https://www.linkedin.com/in/heykriegs/">LinkedIn</a><a href="mailto:keykriegs@gmail.com">keykriegs@gmail.com</a></div>
+</nav>
+
+<main>
+  <div class="intro-h">
+    <h1>recently,<br>creative director<br>at ibm quantum</h1>
+    <span class="hint">Scroll to view more</span>
+  </div>
+
+  <section class="sec">
+    <h2>About</h2>
+    <div class="bio">
+      <p class="lead">I create winning designs and teams that excel.</p>
+      <p>I&rsquo;m an award-winning multidisciplinary design leader with over 15 years of experience shaping impactful, human-centered experiences at Fortune 500 companies like IBM, Oracle, and Dell. I currently lead creative direction for IBM Quantum, envisioning the future of quantum computing through product, web, and brand design. I build cross-functional design teams and drive large-scale enterprise projects that deliver business value and user satisfaction.</p>
+      <p>From pioneering the Oracle.com design system to spearheading the creation of IBM Quantum&rsquo;s brand and immersive experiences, I&rsquo;ve combined strategic vision with creative excellence, earning recognition from the Red Dot, Webby, and D&amp;AD awards. I thrive on collaborating across disciplines, whether designing immersive installations for IBM Quantum or leading user-centric e-commerce platforms at Dell.</p>
+      <p>With a background spanning product, brand, experiential, and industrial design, I bring a holistic approach to complex design challenges and the next generation of user experiences.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Journey</h2>
+    <div class="stats">
+      <div class="stat"><b data-n="15" data-plus>0</b><p>Years shaping human-centered experiences across product, brand, experiential, and industrial design.</p></div>
+      <div class="stat"><b data-n="3">0</b><p>Fortune 500 companies: IBM, Oracle, and Dell.</p></div>
+      <div class="stat"><b data-n="2004">0</b><p>Fourth year at Lake | Flato, which received the AIA Architecture Firm Award, the institute&rsquo;s highest firm honor.</p></div>
+      <div class="stat"><b data-n="2024">0</b><p>Red Dot Best in Show for IBM Quantum System Two, alongside ADC, One Show, and D&amp;AD recognition.</p></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Awards</h2>
+    <ul class="hist">
+      <li><span class="r">Red Dot Best in Show, Productivity</span><span class="o">IBM Quantum System Two, product design</span><span class="y">2024</span></li>
+      <li><span class="r">ADC Bronze Cube</span><span class="o">IBM Quantum System Two</span><span class="y">2024</span></li>
+      <li><span class="r">The One Show Silver Pencil</span><span class="o">IBM Quantum System Two</span><span class="y">2024</span></li>
+      <li><span class="r">D&amp;AD Graphite Pencil</span><span class="o">IBM Quantum System Two</span><span class="y">2024</span></li>
+      <li><span class="r">Red Dot Best of the Best</span><span class="o">IBM Quantum System Two launch film</span><span class="y">2024</span></li>
+      <li><span class="r">Red Dot Best in Show, Productivity</span><span class="o">IBM Quantum System One: Cleveland Clinic</span><span class="y">2024</span></li>
+      <li><span class="r">Red Dot Design Award</span><span class="o">Quantum System Two, concept</span><span class="y">2023</span></li>
+      <li><span class="r">AIGA San Francisco Design Week Award</span><span class="o">Oracle Redwood Design System</span><span class="y">2021</span></li>
+      <li><span class="r">Gold Addy, Elements of Advertising</span><span class="o">Dell Wallpapers photography project</span><span class="y">2017</span></li>
+      <li><span class="r">Webby</span><span class="o">Dell.com</span><span class="y">2013</span></li>
+      <li><span class="r">Gold Addy</span><span class="o">Salt and Time digital ad</span><span class="y">2008</span></li>
+      <li><span class="r">Silver Telly</span><span class="o">San Antonio Rodeo television campaign</span><span class="y">2006</span></li>
+      <li><span class="r">AIA Architecture Firm Award</span><span class="o">Lake | Flato</span><span class="y">2004</span></li>
+    </ul>
+  </section>
+
+  <section class="sec">
+    <h2>Portrait</h2>
+    <div class="portrait"><!-- <img src="michael.jpg" alt="Portrait of Michael Kriegshauser"> --></div>
+  </section>
+
+  <section class="sec">
+    <h2>Get connected</h2>
+    <ul class="connect">
+      <li><a href="mailto:keykriegs@gmail.com">email <span>write</span></a></li>
+      <li><a href="https://www.instagram.com/heykriegs/">instagram <span>follow</span></a></li>
+      <li><a href="https://www.linkedin.com/in/heykriegs/">linkedin <span>connect</span></a></li>
+      <li><a href="https://www.behance.net/mkriegs77d2a0">behance <span>view work</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="links"><a href="https://www.instagram.com/heykriegs/">Instagram</a><a href="https://www.linkedin.com/in/heykriegs/">LinkedIn</a><a href="https://www.behance.net/mkriegs77d2a0">Behance</a></div>
+  <div class="fine"><span>&copy; 2026 Michael Kriegshauser</span><a href="#">Back to top</a></div>
+</footer>
+
+<script>
+(function(){
+  var b=document.querySelector('.burger'), m=document.getElementById('menu');
+  function set(o){
+    m.classList.toggle('open',o);document.body.classList.toggle('locked',o);
+    b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');
+  }
+  b.addEventListener('click',function(){set(!m.classList.contains('open'))});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false)})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
+})();
+
+// Count the journey numbers up when they scroll into view
+(function(){
+  var els=document.querySelectorAll('.stat b');
+  function fmt(el,v){el.textContent=v+(el.hasAttribute('data-plus')?'+':'')}
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window)){
+    els.forEach(function(el){fmt(el,+el.dataset.n)});return;
+  }
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;io.unobserve(e.target);
+      var el=e.target,end=+el.dataset.n,t0=performance.now(),d=1400;
+      (function step(t){
+        var p=Math.min((t-t0)/d,1),eased=1-Math.pow(1-p,3);
+        fmt(el,Math.round(end*eased));
+        if(p<1)requestAnimationFrame(step);
+      })(t0);
+    });
+  },{threshold:.4});
+  els.forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
