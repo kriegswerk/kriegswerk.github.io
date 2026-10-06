@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- EDIT: title + description -->
-<title>Michael Kriegshauser — Creative Director</title>
-<meta name="description" content="Award-winning multidisciplinary design leader. Creative direction for IBM Quantum.">
+<title>Project Title — Michael Kriegshauser</title>
+<meta name="description" content="Project case study.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
@@ -89,6 +89,30 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--ink);outline-offset
 .js .item.in .media>*{transform:none}
 .js .item.in figcaption{opacity:1;transform:none}
 
+/* ---------- project page ---------- */
+.title{padding:calc(var(--pad)*7) var(--pad) calc(var(--pad)*2)}
+.title h1{max-width:16ch;font-size:clamp(2.4rem,7vw,7rem);line-height:.98;letter-spacing:-.035em;animation:rise 1.1s var(--ease) both}
+@keyframes rise{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:none}}
+.facts{display:grid;grid-template-columns:1fr 1fr 2fr;gap:16px;padding:calc(var(--pad)*1.2) var(--pad);border-top:1px solid var(--line)}
+.facts dl{display:grid;gap:14px}
+.facts dt{color:var(--mute);font-size:13px}
+.facts dd{margin:0}
+.facts .desc{grid-column:3;max-width:62ch}
+.facts .desc p+p{margin-top:1em}
+@media(max-width:700px){.facts{grid-template-columns:1fr}.facts .desc{grid-column:auto}}
+.gallery.pad{padding:calc(var(--pad)*1.2) var(--pad) calc(var(--pad)*3)}
+.item.tall .media{aspect-ratio:3/4}
+.item.full .media{aspect-ratio:21/9}
+.item.full{grid-column:span 12}
+.item.offset{grid-column:7/span 6}
+@media(max-width:700px){.item.offset{grid-column:span 12}.item.full .media{aspect-ratio:16/10}}
+.quote{grid-column:span 12;padding:calc(var(--pad)*2) 0;max-width:30ch;font-size:clamp(1.4rem,3vw,3rem);line-height:1.1;letter-spacing:-.025em}
+.js .quote{opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease),transform 1.1s var(--ease)}
+.js .quote.in{opacity:1;transform:none}
+.next{display:block;padding:calc(var(--pad)*2) var(--pad) calc(var(--pad)*3);border-top:1px solid var(--line)}
+.next small{display:block;color:var(--mute);font-size:13px;margin-bottom:12px}
+.next span{display:block;font-size:clamp(2rem,7vw,7rem);line-height:1;letter-spacing:-.035em;transition:transform .5s var(--ease)}
+.next:hover span{transform:translateX(16px)}
 /* ---------- footer ---------- */
 footer{padding:calc(var(--pad)*3) var(--pad) var(--pad);border-top:1px solid var(--line);
   display:grid;grid-template-columns:1fr 1fr 2fr;gap:16px}
@@ -109,7 +133,7 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
 
 <!-- EDIT: name / city / nav. Each dropdown is a list of linkable projects -->
 <header class="bar">
-  <a href="#top">Michael Kriegshauser</a>
+  <a href="index.html">Michael Kriegshauser</a>
   <nav class="nav" aria-label="Main">
     <div class="dd">
       <button aria-expanded="false" aria-haspopup="true">Brand/Campaign</button>
@@ -139,69 +163,40 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
         <a href="https://workbykriegs.com/ibm-quantum-system-one-at-cleveland-clinic">Quantum System One <span>Cleveland Clinic</span></a>
       </div>
     </div>
-    <a href="#contact">Info</a>
+    <a href="info.html">Info</a>
   </nav>
 </header>
 
 <main id="top">
-  <!-- EDIT: intro statement -->
-  <section class="intro">
-    <h1>Hi, I am Michael Kriegshauser — I create winning designs and teams that excel.</h1>
+  <!-- EDIT: project title -->
+  <section class="title"><h1>Project Title</h1></section>
+
+  <!-- EDIT: facts + description -->
+  <section class="facts">
+    <dl><div><dt>Client</dt><dd>Client Name</dd></div><div><dt>Year</dt><dd>2025</dd></div></dl>
+    <dl><div><dt>Role</dt><dd>Creative Direction</dd></div><div><dt>Category</dt><dd>Brand &amp; Marketing</dd></div></dl>
+    <div class="desc">
+      <p>A short paragraph on the brief: who the client is, what they needed, and the goal of the project.</p>
+      <p>A second paragraph on your approach and what you delivered. Keep it to a few sentences.</p>
+    </div>
   </section>
 
-  <!-- EDIT: projects. Replace each .media's contents with <img src="..." alt="..."> or <video src="..." autoplay muted loop playsinline>.
-       Layout classes on .item: (none) = half width, "third" = one third, "wide" = full width -->
-  <article class="project" id="project-1">
-    <div class="head">
-      <h2>Quantum Brand Evolution</h2>
-      <div class="tags">Brand &amp; Marketing, IBM</div>
-      <p>A short paragraph about the brief, the client's goal and what you made. Two to four sentences works best.</p>
-    </div>
-    <div class="gallery">
-      <figure class="item wide"><div class="media" style="--c:#e4dfd6"><!-- <img src="p1-01.jpg" alt=""> --></div><figcaption><span>P1_01.jpg</span></figcaption></figure>
-      <figure class="item"><div class="media" style="--c:#d9d6d0"></div><figcaption><span>P1_02.jpg</span></figcaption></figure>
-      <figure class="item"><div class="media" style="--c:#cfd3d2"></div><figcaption><span>P1_03.mp4</span></figcaption></figure>
-    </div>
-  </article>
+  <!-- EDIT: gallery. Layout classes on .item: none = half, wide/full = full width, third, tall, offset (right half). Replace each .media's contents with an <img> or <video>. -->
+  <section class="gallery pad">
+      <figure class="item full"><div class="media" style="--c:#e4dfd6"><!-- <img src="..." alt=""> or <video src="..." autoplay muted loop playsinline></video> --></div><figcaption><span>01_hero.jpg</span></figcaption></figure>
+      <figure class="item "><div class="media" style="--c:#d9d6d0"><!-- <img src="..." alt=""> or <video src="..." autoplay muted loop playsinline></video> --></div><figcaption><span>02.jpg</span></figcaption></figure>
+      <figure class="item offset tall"><div class="media" style="--c:#cfd3d2"><!-- <img src="..." alt=""> or <video src="..." autoplay muted loop playsinline></video> --></div><figcaption><span>03.mp4</span></figcaption></figure>
+      <p class="quote">A pull quote or one-line takeaway from the project.</p>
+      <figure class="item third"><div class="media" style="--c:#d8d2c8"><!-- <img src="..." alt=""> or <video src="..." autoplay muted loop playsinline></video> --></div><figcaption><span>04.jpg</span></figcaption></figure>
+      <figure class="item third"><div class="media" style="--c:#c9cdcb"><!-- <img src="..." alt=""> or <video src="..." autoplay muted loop playsinline></video> --></div><figcaption><span>05.jpg</span></figcaption></figure>
+      <figure class="item third"><div class="media" style="--c:#dcd8d2"><!-- <img src="..." alt=""> or <video src="..." autoplay muted loop playsinline></video> --></div><figcaption><span>06.jpg</span></figcaption></figure>
+      <figure class="item wide"><div class="media" style="--c:#e1ddd5"><!-- <img src="..." alt=""> or <video src="..." autoplay muted loop playsinline></video> --></div><figcaption><span>07.jpg</span></figcaption></figure>
+      <figure class="item "><div class="media" style="--c:#d4d1cb"><!-- <img src="..." alt=""> or <video src="..." autoplay muted loop playsinline></video> --></div><figcaption><span>08.jpg</span></figcaption></figure>
+      <figure class="item "><div class="media" style="--c:#e0dbd1"><!-- <img src="..." alt=""> or <video src="..." autoplay muted loop playsinline></video> --></div><figcaption><span>09.jpg</span></figcaption></figure>
+  </section>
 
-  <article class="project" id="project-2">
-    <div class="head">
-      <h2>Oracle.com Redwood Design System</h2>
-      <div class="tags">Digital and Platform Design, Oracle</div>
-      <p>A short paragraph about the brief, the client's goal and what you made.</p>
-    </div>
-    <div class="gallery">
-      <figure class="item third"><div class="media" style="--c:#d8d2c8"></div><figcaption><span>P2_01.jpg</span></figcaption></figure>
-      <figure class="item third"><div class="media" style="--c:#c9cdcb"></div><figcaption><span>P2_02.jpg</span></figcaption></figure>
-      <figure class="item third"><div class="media" style="--c:#dcd8d2"></div><figcaption><span>P2_03.jpg</span></figcaption></figure>
-      <figure class="item wide"><div class="media" style="--c:#e1ddd5"></div><figcaption><span>P2_04.jpg</span></figcaption></figure>
-    </div>
-  </article>
-
-  <article class="project" id="project-3">
-    <div class="head">
-      <h2>Dell Accessories Store</h2>
-      <div class="tags">Digital and Platform Design, Dell</div>
-      <p>A short paragraph about the brief, the client's goal and what you made.</p>
-    </div>
-    <div class="gallery">
-      <figure class="item"><div class="media" style="--c:#d4d1cb"></div><figcaption><span>P3_01.jpg</span></figcaption></figure>
-      <figure class="item"><div class="media" style="--c:#e0dbd1"></div><figcaption><span>P3_02.jpg</span></figcaption></figure>
-    </div>
-  </article>
-
-  <article class="project" id="project-4">
-    <div class="head">
-      <h2>Quantum System One, Cleveland Clinic</h2>
-      <div class="tags">Creative Direction, IBM</div>
-      <p>A short paragraph about the brief, the client's goal and what you made.</p>
-    </div>
-    <div class="gallery">
-      <figure class="item wide"><div class="media" style="--c:#cfd2d0"></div><figcaption><span>P4_01.jpg</span></figcaption></figure>
-      <figure class="item"><div class="media" style="--c:#dad5cb"></div><figcaption><span>P4_02.jpg</span></figcaption></figure>
-      <figure class="item"><div class="media" style="--c:#d6d8d6"></div><figcaption><span>P4_03.jpg</span></figcaption></figure>
-    </div>
-  </article>
+  <!-- EDIT: next project link -->
+  <a class="next" href="#"><small>Next project</small><span>Next Project Title</span></a>
 </main>
 
 <!-- EDIT: contact + links -->
@@ -233,7 +228,7 @@ document.documentElement.classList.add('js');
 
 // Image reveal: each media frame wipes open and settles as it scrolls into view, staggered within a row
 (function(){
-  var items=[].slice.call(document.querySelectorAll('.item'));
+  var items=[].slice.call(document.querySelectorAll('.item,.quote'));
   if(!('IntersectionObserver' in window)){items.forEach(function(i){i.classList.add('in')});return}
   var io=new IntersectionObserver(function(entries){
     var batch=entries.filter(function(e){return e.isIntersecting});
