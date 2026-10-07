@@ -70,16 +70,13 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--ink);outline-offset
 .head p{max-width:62ch}
 @media(max-width:700px){.head{grid-template-columns:1fr}}
 
-.gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--pad)}
-.item{grid-column:span 6;margin:0}
-.item.wide{grid-column:span 12}
-.item.third{grid-column:span 4}
-@media(max-width:700px){.item,.item.third{grid-column:span 12}}
-.media{position:relative;overflow:hidden;aspect-ratio:4/5;background:var(--c,#e7e3dc)}
-.item.wide .media{aspect-ratio:16/9}
-.item.third .media{aspect-ratio:3/4}
-.media img,.media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.gallery{columns:4;column-gap:var(--pad)}
+.item,.item.wide,.item.third{display:inline-block;width:100%;margin:0 0 var(--pad);break-inside:avoid;grid-column:auto}
+.media,.item.wide .media,.item.third .media{position:relative;overflow:hidden;aspect-ratio:auto;background:var(--c,#e7e3dc)}
+.media img,.media video{position:relative;width:100%;height:auto;object-fit:contain;display:block}
 .item figcaption{display:flex;justify-content:space-between;margin-top:10px;color:var(--mute);font-size:13px}
+@media(max-width:1024px){.gallery{columns:2}}
+@media(max-width:600px){.gallery{columns:1}}
 
 /* image reveal: the frame wipes open from the bottom while the media settles from a slight zoom */
 .js .item .media{clip-path:inset(100% 0 0 0);transition:clip-path 1.2s var(--ease)}
