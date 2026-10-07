@@ -127,6 +127,18 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
   *{animation:none!important;transition:none!important}
   .js .item .media{clip-path:none}.js .item .media>*{transform:none}.js .item figcaption{opacity:1;transform:none}
 }
+
+/* ---------- Dell multi-project collection ---------- */
+.dell-project{border-top:1px solid var(--line);padding-top:calc(var(--pad)*1.5)}
+.dell-project-copy{display:grid;grid-template-columns:1fr 1fr 2fr;gap:16px;padding:0 var(--pad) calc(var(--pad)*1.5)}
+.dell-project-copy>div:first-child{grid-column:1/3}
+.dell-project-copy h2{font-size:clamp(1.6rem,3.2vw,3.5rem);line-height:1.02;letter-spacing:-.025em;max-width:16ch}
+.dell-kicker{display:block;color:var(--mute);font-size:13px;margin-bottom:10px}
+.dell-desc{grid-column:3;max-width:62ch}
+.dell-desc p+p{margin-top:1em}
+.dell-gallery{padding-top:0}
+@media(max-width:700px){.dell-project-copy{grid-template-columns:1fr}.dell-project-copy>div:first-child,.dell-desc{grid-column:auto}}
+
 </style>
 </head>
 <body>
@@ -173,35 +185,68 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
 
   <!-- EDIT: facts + description -->
   <section class="facts">
-    <dl><div><dt>Client</dt><dd>Dell Technologies</dd></div></dl>
-    <dl></dl>
+    <dl><div><dt>Client</dt><dd>Dell Technologies</dd></div><div><dt>Tenure</dt><dd>8 years</dd></div></dl>
+    <dl><div><dt>Roles</dt><dd>Designer<br>Associate Experience Director</dd></div></dl>
     <div class="desc">
-      <p>During my eight years at Dell Technologies as a Designer and then an Associate Experience Director, I delivered measurable results across many parts of Dell.com’s e-commerce experience (at the time the third largest e-commerce platform in the world). Through thoughtful, rigorous application of user-centered design and systems thinking in an agile framework, my teams delivered world-class experiences across multiple platforms, increasing NPS and CSAT scores for dell.com and delivering business value to stakeholders.</p>
-      <p>Key Projects and Areas of Focus<br>• Software and accessories shopping experience<br>• Alienware.com Redesign<br>• Globalization of payments and checkout platform<br>• Globalization of delivery platform<br>• Mobile shopping app (all platforms)<br>• Globalization of shopping apps<br>• Internal sales mobile applications</p>
-      <p>Dell Universal Screen Fill &amp; Wallpaper Strategy<br><br>Problem:<br>The lack of a clear strategy and creative direction behind the wallpapers and screen fills used across Dell products, marketing, and e-commerce experiences added to marketing costs, created friction between business units, and degraded the customer experience.<br><br>Solution:<br>Create a consistent wallpaper and screen-fill strategy with a clear creative vision, unite internal teams, and gain buy-in from business stakeholders.<br><br>Execution:<br>Usability research found that consistently implementing a wallpaper and screen-fill strategy (e.g., using the same wallpapers installed on Dell systems as screen fills across marketing and e-commerce experiences) would improve the customer experience and build a stronger brand presence.</p>
-      <p>Windows Dell Shop App<br><br>A great example of Lean UX, we worked closely with Microsoft before the release of their new operating system to ensure a Dell shopping app would come preinstalled on all Dell computers. We coordinated closely with Microsoft and Dell developers to understand the new OS and app framework requirements while leading UX and UI design for a new shopping application. After its release, we monitored user behaviors and worked in an agile fashion to push updates that eased customer pain points and improved CSAT.</p>
-      <p>Dell Channel Sales App<br><br>Channel sales is a fast-paced environment where being first to submit a proposal is key to winning. A salesperson in the field must collaborate in real time on price, inventory, and delivery with a client and vendor to drive sales. This unique app was developed with sales team input to do just that. An app designed for two people to sit in front of as the salesperson customizes an order to a client’s requests and creates a bid in real time. Channel sales accounted for almost half of Dell’s yearly profit. Our 8% bump in sales at launch contributed significantly to Dell's bottom line.</p>
+      <p>During my eight years at Dell Technologies as a Designer and then an Associate Experience Director, I delivered measurable results across many parts of Dell.com’s e-commerce experience (at the time the third largest e-commerce platform in the world). Through thoughtful, rigorous application of user-centered design and systems thinking in an agile framework, my teams delivered world-class experiences across multiple platforms, increasing NPS and CSAT scores for Dell.com and delivering business value to stakeholders.</p>
+      <p>Key projects included software and accessories shopping, Alienware.com, globalization of payments, checkout and delivery platforms, mobile shopping applications, and internal sales tools.</p>
     </div>
   </section>
 
   <!-- EDIT: gallery. Layout classes on .item: none = half, wide/full = full width, third, tall, offset (right half). Replace each .media's contents with an <img> or <video>. -->
-  <section class="gallery pad">
-      <figure class="item full"><div class="media"><img src="/images/55b92bac-f21e-474d-93de-5c97aff1b889_rw_1200.jpg" alt="" loading="lazy"></div><figcaption><span>55b92bac-f21e-474d-93de-5c97aff1b889_rw_1200.jpg</span></figcaption></figure>
-      <figure class="item"><div class="media"><img src="/images/c0a76816-baec-496b-b8c2-0df91e281101_rw_1920.jpg" alt="" loading="lazy"></div><figcaption><span>c0a76816-baec-496b-b8c2-0df91e281101_rw_1920.jpg</span></figcaption></figure>
-      <figure class="item offset tall"><div class="media"><img src="/images/6f21ce89-4e71-420d-863b-be653e237bce_rw_3840.png" alt="" loading="lazy"></div><figcaption><span>6f21ce89-4e71-420d-863b-be653e237bce_rw_3840.png</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/93570009-b393-454a-87ed-11614c7eccf2_rw_1920.jpg" alt="" loading="lazy"></div><figcaption><span>93570009-b393-454a-87ed-11614c7eccf2_rw_1920.jpg</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/13600bf1-4e96-42e6-a63d-9dfc01b781f7_rw_1920.jpg" alt="" loading="lazy"></div><figcaption><span>13600bf1-4e96-42e6-a63d-9dfc01b781f7_rw_1920.jpg</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/36d1a735-13a4-4e32-95a1-23f09e2f7996_rw_1920.jpg" alt="" loading="lazy"></div><figcaption><span>36d1a735-13a4-4e32-95a1-23f09e2f7996_rw_1920.jpg</span></figcaption></figure>
-      <figure class="item wide"><div class="media"><img src="/images/31fe2e53-4211-4206-a01e-85b10820bb64_rw_1200.jpg" alt="" loading="lazy"></div><figcaption><span>31fe2e53-4211-4206-a01e-85b10820bb64_rw_1200.jpg</span></figcaption></figure>
-      <figure class="item"><div class="media"><img src="/images/57bd6708-175f-4dfa-b822-367ef334aa60_rw_3840.png" alt="" loading="lazy"></div><figcaption><span>57bd6708-175f-4dfa-b822-367ef334aa60_rw_3840.png</span></figcaption></figure>
-      <figure class="item"><div class="media"><img src="/images/f7dff34f-b48a-4502-af15-223a76ba0adc_rw_1200.jpg" alt="" loading="lazy"></div><figcaption><span>f7dff34f-b48a-4502-af15-223a76ba0adc_rw_1200.jpg</span></figcaption></figure>
-      <figure class="item full"><div class="media"><img src="/images/87c3ac1a-1e5a-428c-b8c6-f6603a59257e_rw_3840.png" alt="" loading="lazy"></div><figcaption><span>87c3ac1a-1e5a-428c-b8c6-f6603a59257e_rw_3840.png</span></figcaption></figure>
-      <figure class="item"><div class="media"><img src="/images/26ba4b97-3c19-4bbe-a645-81828903c12a_rw_1200.jpg" alt="" loading="lazy"></div><figcaption><span>26ba4b97-3c19-4bbe-a645-81828903c12a_rw_1200.jpg</span></figcaption></figure>
-      <figure class="item offset tall"><div class="media"><img src="/images/6f82d286-dcd4-4cab-bf02-2c144eea3521_rw_1200.jpg" alt="" loading="lazy"></div><figcaption><span>6f82d286-dcd4-4cab-bf02-2c144eea3521_rw_1200.jpg</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/eb714aaa-e7dc-4f10-a5c4-8322d7cd14c3_rw_3840.png" alt="" loading="lazy"></div><figcaption><span>eb714aaa-e7dc-4f10-a5c4-8322d7cd14c3_rw_3840.png</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/ca65d1b5-1555-4b66-bb75-2f32bb6963d8_rw_1200.gif" alt="" loading="lazy"></div><figcaption><span>ca65d1b5-1555-4b66-bb75-2f32bb6963d8_rw_1200.gif</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/162cb7e5-11f7-44f7-8f11-9633660e34f9_rw_1920.jpg" alt="" loading="lazy"></div><figcaption><span>162cb7e5-11f7-44f7-8f11-9633660e34f9_rw_1920.jpg</span></figcaption></figure>
-      <figure class="item wide"><div class="media"><img src="/images/c12ede77-5e8a-48bc-a486-eceb4a561989_rw_1920.jpg" alt="" loading="lazy"></div><figcaption><span>c12ede77-5e8a-48bc-a486-eceb4a561989_rw_1920.jpg</span></figcaption></figure>
+  <section class="dell-project">
+    <div class="dell-project-copy">
+      <div><span class="dell-kicker">Project 01</span><h2>Dell.com Software and Accessories Shopping Experience</h2></div>
+      <div class="dell-desc"><p>In 2017, I led the redesign of the Dell Software and Accessories shopping experience. Previously, it was a legacy catalog of “add-ons” primarily used to upsell computer purchases. My goal was to transform it into a modern, user-centric online shopping platform. By focusing on key areas like taxonomy, UX/UI, and backend CMS, we crafted a seamless end-to-end experience that significantly improved usability and engagement.</p>
+        <p>Key enhancements included a new product comparison feature, simplified filtering and sorting options, and Dell.com’s first-ever personalized shopping and recommendation system. The results were immediate: upon launch, the revamped experience drove a 35% year-over-year increase in sales.</p></div>
+    </div>
+    <div class="gallery pad dell-gallery">
+      <figure class="item"><div class="media"><img src="/images/55b92bac-f21e-474d-93de-5c97aff1b889_rw_1200.jpg" alt="" loading="lazy"></div><figcaption><span>DSA_01</span></figcaption></figure>
+      <figure class="item"><div class="media"><img src="/images/c0a76816-baec-496b-b8c2-0df91e281101_rw_1920.jpg" alt="" loading="lazy"></div><figcaption><span>DSA_02</span></figcaption></figure>
+      <figure class="item"><div class="media"><img src="/images/6f21ce89-4e71-420d-863b-be653e237bce_rw_3840.png" alt="" loading="lazy"></div><figcaption><span>DSA_03</span></figcaption></figure>
+      <figure class="item"><div class="media"><img src="/images/93570009-b393-454a-87ed-11614c7eccf2_rw_1920.jpg" alt="" loading="lazy"></div><figcaption><span>DSA_04</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="dell-project">
+    <div class="dell-project-copy">
+      <div><span class="dell-kicker">Project 02</span><h2>Dell Universal Screen Fill &amp; Wallpaper Strategy</h2></div>
+      <div class="dell-desc"><p><strong>Problem:</strong><br>The lack of a clear strategy and creative direction behind the wallpapers and screen fills used across Dell products, marketing, and e-commerce experiences added to marketing costs, created friction between business units, and degraded the customer experience.</p>
+        <p><strong>Solution:</strong><br>Create a consistent wallpaper and screen-fill strategy with a clear creative vision, unite internal teams, and gain buy-in from business stakeholders.</p>
+        <p><strong>Execution:</strong><br>Usability research found that consistently implementing a wallpaper and screen-fill strategy—using the same wallpapers installed on Dell systems as screen fills across marketing and e-commerce experiences—would improve the customer experience and build a stronger brand presence.</p></div>
+    </div>
+    <div class="gallery pad dell-gallery">
+      <figure class="item"><div class="media"><img src="/images/13600bf1-4e96-42e6-a63d-9dfc01b781f7_rw_1920.jpg" alt="" loading="lazy"></div><figcaption><span>DSF_01</span></figcaption></figure>
+      <figure class="item"><div class="media"><img src="/images/36d1a735-13a4-4e32-95a1-23f09e2f7996_rw_1920.jpg" alt="" loading="lazy"></div><figcaption><span>DSF_02</span></figcaption></figure>
+      <figure class="item"><div class="media"><img src="/images/31fe2e53-4211-4206-a01e-85b10820bb64_rw_1200.jpg" alt="" loading="lazy"></div><figcaption><span>DSF_03</span></figcaption></figure>
+      <figure class="item"><div class="media"><img src="/images/57bd6708-175f-4dfa-b822-367ef334aa60_rw_3840.png" alt="" loading="lazy"></div><figcaption><span>DSF_04</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="dell-project">
+    <div class="dell-project-copy">
+      <div><span class="dell-kicker">Project 03</span><h2>Windows Dell Shop App</h2></div>
+      <div class="dell-desc"><p>A great example of Lean UX, we worked closely with Microsoft before the release of their new operating system to ensure a Dell shopping app would come preinstalled on all Dell computers. We coordinated closely with Microsoft and Dell developers to understand the new OS and app framework requirements while leading UX and UI design for a new shopping application. After its release, we monitored user behaviors and worked in an agile fashion to push updates that eased customer pain points and improved CSAT.</p></div>
+    </div>
+    <div class="gallery pad dell-gallery">
+      <figure class="item"><div class="media"><img src="/images/f7dff34f-b48a-4502-af15-223a76ba0adc_rw_1200.jpg" alt="" loading="lazy"></div><figcaption><span>WDS_01</span></figcaption></figure>
+      <figure class="item"><div class="media"><img src="/images/87c3ac1a-1e5a-428c-b8c6-f6603a59257e_rw_3840.png" alt="" loading="lazy"></div><figcaption><span>WDS_02</span></figcaption></figure>
+      <figure class="item"><div class="media"><img src="/images/26ba4b97-3c19-4bbe-a645-81828903c12a_rw_1200.jpg" alt="" loading="lazy"></div><figcaption><span>WDS_03</span></figcaption></figure>
+      <figure class="item"><div class="media"><img src="/images/6f82d286-dcd4-4cab-bf02-2c144eea3521_rw_1200.jpg" alt="" loading="lazy"></div><figcaption><span>WDS_04</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="dell-project">
+    <div class="dell-project-copy">
+      <div><span class="dell-kicker">Project 04</span><h2>Dell Channel Sales App</h2></div>
+      <div class="dell-desc"><p>Channel sales is a fast-paced environment where being first to submit a proposal is key to winning. A salesperson in the field must collaborate in real time on price, inventory, and delivery with a client and vendor to drive sales. This unique app was developed with sales team input to do just that—designed for two people to sit in front of as the salesperson customizes an order to a client’s requests and creates a bid in real time. Channel sales accounted for almost half of Dell’s yearly profit. Our 8% bump in sales at launch contributed significantly to Dell's bottom line.</p></div>
+    </div>
+    <div class="gallery pad dell-gallery">
+      <figure class="item"><div class="media"><img src="/images/eb714aaa-e7dc-4f10-a5c4-8322d7cd14c3_rw_3840.png" alt="" loading="lazy"></div><figcaption><span>DCS_01</span></figcaption></figure>
+      <figure class="item"><div class="media"><img src="/images/ca65d1b5-1555-4b66-bb75-2f32bb6963d8_rw_1200.gif" alt="" loading="lazy"></div><figcaption><span>DCS_02</span></figcaption></figure>
+      <figure class="item"><div class="media"><img src="/images/162cb7e5-11f7-44f7-8f11-9633660e34f9_rw_1920.jpg" alt="" loading="lazy"></div><figcaption><span>DCS_03</span></figcaption></figure>
+      <figure class="item"><div class="media"><img src="/images/c12ede77-5e8a-48bc-a486-eceb4a561989_rw_1920.jpg" alt="" loading="lazy"></div><figcaption><span>DCS_04</span></figcaption></figure>
+    </div>
   </section>
 
   <!-- EDIT: next project link -->
