@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- EDIT: title + description -->
-<title>Video Creative Direction — Michael Kriegshauser</title>
-<meta name="description" content="Video Creative Direction project case study by Michael Kriegshauser.">
+<title>Selected Designs — Michael Kriegshauser</title>
+<meta name="description" content="Selected design work by Michael Kriegshauser.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
@@ -128,36 +128,14 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
   .js .item .media{clip-path:none}.js .item .media>*{transform:none}.js .item figcaption{opacity:1;transform:none}
 }
 
-/* ---------- tablet / mobile menu ---------- */
-.menu-toggle{display:none;align-items:center;justify-content:center;width:32px;height:24px;position:relative;z-index:31}
-.menu-toggle span,.menu-toggle::before,.menu-toggle::after{content:"";position:absolute;width:22px;height:1px;background:currentColor;transition:transform .3s var(--ease),opacity .2s var(--ease)}
-.menu-toggle::before{transform:translateY(-7px)}
-.menu-toggle::after{transform:translateY(7px)}
-.bar.menu-open .menu-toggle span{opacity:0}
-.bar.menu-open .menu-toggle::before{transform:rotate(45deg)}
-.bar.menu-open .menu-toggle::after{transform:rotate(-45deg)}
-@media(max-width:1024px){
-  .bar{grid-template-columns:1fr auto;align-items:start}
-  .menu-toggle{display:inline-flex}
-  .nav{display:none;position:fixed;inset:0;z-index:30;background:var(--bg);padding:calc(var(--pad)*4 + env(safe-area-inset-top,0px)) var(--pad) var(--pad);overflow:auto;flex-direction:column;gap:0;justify-content:flex-start;align-items:stretch}
-  .bar.menu-open .nav{display:flex}
-  .nav>.dd,.nav>a{border-top:1px solid var(--line);padding:16px 0}
-  .nav>.dd>button{width:100%;justify-content:space-between;font-size:clamp(1.5rem,4vw,2.5rem)}
-  .nav>a{font-size:clamp(1.5rem,4vw,2.5rem)}
-  .panel{position:static;display:none;min-width:0;max-height:none;border:0;padding:8px 0 0;opacity:1;visibility:visible;transform:none;overflow:visible;transition:none}
-  .dd.open .panel{display:block}
-  .panel a{padding:9px 0;font-size:15px;white-space:normal}
-}
-
-
-/* ---------- video projects ---------- */
-.video-gallery{padding:calc(var(--pad)*1.2) var(--pad) calc(var(--pad)*3);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:calc(var(--pad)*2) var(--pad)}
-.video-item{margin:0}
-.video-frame{position:relative;width:100%;aspect-ratio:16/9;background:#111;overflow:hidden}
-.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.video-item figcaption{display:grid;grid-template-columns:minmax(70px,.35fr) 1fr;gap:16px;margin-top:10px;color:var(--mute);font-size:13px}
-.video-item figcaption span:last-child{color:var(--ink)}
-@media(max-width:700px){.video-gallery{grid-template-columns:1fr}.video-item figcaption{grid-template-columns:70px 1fr}}
+/* ---------- selected designs ---------- */
+.selected-title{padding-bottom:var(--pad)}
+.selected-intro{border-top:1px solid var(--line);padding:var(--pad);display:grid;grid-template-columns:1fr 1fr 2fr}
+.selected-intro p{grid-column:3;max-width:48ch}
+.selected-title + .selected-intro + .gallery{padding-top:calc(var(--pad)*2)}
+.selected-title + .selected-intro + .gallery .media{background:transparent}
+.selected-title + .selected-intro + .gallery .media img{object-fit:cover}
+@media(max-width:700px){.selected-intro{grid-template-columns:1fr}.selected-intro p{grid-column:auto}}
 
 </style>
 </head>
@@ -166,7 +144,7 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
 <!-- EDIT: name / city / nav. Each dropdown is a list of linkable projects -->
 <header class="bar">
   <a href="index.html">Michael Kriegshauser</a>
-  <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>\n  <nav class="nav" aria-label="Main">
+  <nav class="nav" aria-label="Main">
     <div class="dd">
       <button aria-expanded="false" aria-haspopup="true">Brand/Campaign</button>
       <div class="panel">
@@ -202,50 +180,29 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
 
 <main id="top">
   <!-- EDIT: project title -->
-  <section class="title"><h1>Video — Creative Direction</h1></section>
+  <section class="title selected-title"><h1>Selected Designs</h1></section>
 
   <!-- EDIT: facts + description -->
-  <section class="facts">
-    <dl>
-      <div><dt>Project</dt><dd>Video — Creative Direction</dd></div>
-      <div><dt>Year</dt><dd>2023–2024</dd></div>
-    </dl>
-    <dl>
-      <div><dt>Production</dt><dd>MAP | UNIVERSAL<br>MALKA<br>REVELATOR PRODUCTIONS</dd></div>
-    </dl>
-    <div class="desc"></div>
-  </section>
+  <section class="selected-intro"><p>A selection of design, art direction, identity, image-making, and visual experiments.</p></section>
 
   <!-- EDIT: gallery. Layout classes on .item: none = half, wide/full = full width, third, tall, offset (right half). Replace each .media's contents with an <img> or <video>. -->
-  <section class="video-gallery">
-    <figure class="video-item">
-      <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/Qndz54SGCAs" title="DIGITAL SHORT FILM: UNVEILING IBM QUANTUM SYSTEM TWO" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-      <figcaption><span>VCD_01</span><span>DIGITAL SHORT FILM: UNVEILING IBM QUANTUM SYSTEM TWO<br>2024: Red Dot Best of the Best</span></figcaption>
-    </figure>
-    <figure class="video-item">
-      <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/ABJEeCr6nE4" title="DIGITAL CASE STUDY: QUANTUM UTILITY SCIENTIFIC BREAKTHROUGH" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-      <figcaption><span>VCD_02</span><span>DIGITAL CASE STUDY: QUANTUM UTILITY SCIENTIFIC BREAKTHROUGH</span></figcaption>
-    </figure>
-    <figure class="video-item">
-      <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/iaWpoPsSBf4" title="DIGITAL CASE STUDIO: MERCEDES BENZ" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-      <figcaption><span>VCD_03</span><span>DIGITAL CASE STUDIO: MERCEDES BENZ</span></figcaption>
-    </figure>
-    <figure class="video-item">
-      <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/AQjKUN8PORM" title="IBM QUANTUM SYSTEM TWO PROTOTYPE TEASER AD" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-      <figcaption><span>VCD_04</span><span>IBM QUANTUM SYSTEM TWO PROTOTYPE TEASER AD</span></figcaption>
-    </figure>
-    <figure class="video-item">
-      <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/9xbnb5C60BU" title="DIGITAL SHORT: HBCU QUANTUM CENTER LAUNCH" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-      <figcaption><span>VCD_05</span><span>DIGITAL SHORT: HBCU QUANTUM CENTER LAUNCH</span></figcaption>
-    </figure>
-    <figure class="video-item">
-      <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/qQhdwxDDyeA" title="Salt & Time Ben Runkle" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-      <figcaption><span>VCD_06</span><span>Salt &amp; Time Ben Runkle<br>Gold Addy: Austin</span></figcaption>
-    </figure>
+  <section class="gallery pad">
+      <figure class="item full"><div class="media"><img src="/images/125fab0b-4e30-4ebb-899b-9797c7869b5b_car_16x9.png" alt="" loading="lazy"></div><figcaption><span>SD_01</span></figcaption></figure>
+      <figure class="item third"><div class="media"><img src="/images/a91e54b3-8f2e-4342-895e-658e474afda3_carw_16x9x5120.png" alt="" loading="lazy"></div><figcaption><span>SD_02</span></figcaption></figure>
+      <figure class="item third"><div class="media"><img src="/images/392eba25-9522-479b-b1e4-412227aee3a4_carw_16x9x32.jpg" alt="" loading="lazy"></div><figcaption><span>SD_03</span></figcaption></figure>
+      <figure class="item third"><div class="media"><img src="/images/a91e54b3-8f2e-4342-895e-658e474afda3_car_16x9.png" alt="" loading="lazy"></div><figcaption><span>SD_04</span></figcaption></figure>
+      <figure class="item offset tall"><div class="media"><img src="/images/125fab0b-4e30-4ebb-899b-9797c7869b5b_carw_16x9x5120.png" alt="" loading="lazy"></div><figcaption><span>SD_05</span></figcaption></figure>
+      <figure class="item "><div class="media"><img src="/images/1267e0c0-36a0-45bc-8256-c42fa2ea99ef_carw_16x9x5120.png" alt="" loading="lazy"></div><figcaption><span>SD_06</span></figcaption></figure>
+      <figure class="item wide"><div class="media"><img src="/images/1267e0c0-36a0-45bc-8256-c42fa2ea99ef_car_16x9.png" alt="" loading="lazy"></div><figcaption><span>SD_07</span></figcaption></figure>
+      <figure class="item third"><div class="media"><img src="/images/125fab0b-4e30-4ebb-899b-9797c7869b5b_carw_16x9x32.png" alt="" loading="lazy"></div><figcaption><span>SD_08</span></figcaption></figure>
+      <figure class="item third"><div class="media"><img src="/images/392eba25-9522-479b-b1e4-412227aee3a4_carw_16x9x5120.jpg" alt="" loading="lazy"></div><figcaption><span>SD_09</span></figcaption></figure>
+      <figure class="item third"><div class="media"><img src="/images/1267e0c0-36a0-45bc-8256-c42fa2ea99ef_carw_16x9x32.png" alt="" loading="lazy"></div><figcaption><span>SD_10</span></figcaption></figure>
+      <figure class="item full"><div class="media"><img src="/images/392eba25-9522-479b-b1e4-412227aee3a4_car_16x9.jpg" alt="" loading="lazy"></div><figcaption><span>SD_11</span></figcaption></figure>
+      <figure class="item offset tall"><div class="media"><img src="/images/a91e54b3-8f2e-4342-895e-658e474afda3_carw_16x9x32.png" alt="" loading="lazy"></div><figcaption><span>SD_12</span></figcaption></figure>
   </section>
 
   <!-- EDIT: next project link -->
-  <a class="next" href="ibm-quantum-hardware-creative-direction.html"><small>Next project</small><span>IBM Quantum Hardware Creative Direction</span></a>
+  
 </main>
 
 <!-- EDIT: contact + links -->
@@ -289,18 +246,6 @@ document.documentElement.classList.add('js');
   },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
   items.forEach(function(i){io.observe(i)});
 })();
-
-// Tablet/mobile hamburger menu
-(function(){
-  var bar=document.querySelector('.bar'), nav=bar&&bar.querySelector('.nav'), toggle=bar&&bar.querySelector('.menu-toggle');
-  if(!bar||!nav||!toggle)return;
-  function closeMenu(){bar.classList.remove('menu-open');toggle.setAttribute('aria-expanded','false');document.body.style.overflow='';}
-  toggle.addEventListener('click',function(e){e.stopPropagation();var open=bar.classList.toggle('menu-open');toggle.setAttribute('aria-expanded',open?'true':'false');document.body.style.overflow=open?'hidden':'';});
-  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu)});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu()});
-  window.addEventListener('resize',function(){if(window.innerWidth>1024)closeMenu()});
-})();
-
 </script>
 </body>
 </html>
