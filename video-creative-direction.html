@@ -127,6 +127,28 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
   *{animation:none!important;transition:none!important}
   .js .item .media{clip-path:none}.js .item .media>*{transform:none}.js .item figcaption{opacity:1;transform:none}
 }
+
+/* ---------- tablet / mobile menu ---------- */
+.menu-toggle{display:none;align-items:center;justify-content:center;width:32px;height:24px;position:relative;z-index:31}
+.menu-toggle span,.menu-toggle::before,.menu-toggle::after{content:"";position:absolute;width:22px;height:1px;background:currentColor;transition:transform .3s var(--ease),opacity .2s var(--ease)}
+.menu-toggle::before{transform:translateY(-7px)}
+.menu-toggle::after{transform:translateY(7px)}
+.bar.menu-open .menu-toggle span{opacity:0}
+.bar.menu-open .menu-toggle::before{transform:rotate(45deg)}
+.bar.menu-open .menu-toggle::after{transform:rotate(-45deg)}
+@media(max-width:1024px){
+  .bar{grid-template-columns:1fr auto;align-items:start}
+  .menu-toggle{display:inline-flex}
+  .nav{display:none;position:fixed;inset:0;z-index:30;background:var(--bg);padding:calc(var(--pad)*4 + env(safe-area-inset-top,0px)) var(--pad) var(--pad);overflow:auto;flex-direction:column;gap:0;justify-content:flex-start;align-items:stretch}
+  .bar.menu-open .nav{display:flex}
+  .nav>.dd,.nav>a{border-top:1px solid var(--line);padding:16px 0}
+  .nav>.dd>button{width:100%;justify-content:space-between;font-size:clamp(1.5rem,4vw,2.5rem)}
+  .nav>a{font-size:clamp(1.5rem,4vw,2.5rem)}
+  .panel{position:static;display:none;min-width:0;max-height:none;border:0;padding:8px 0 0;opacity:1;visibility:visible;transform:none;overflow:visible;transition:none}
+  .dd.open .panel{display:block}
+  .panel a{padding:9px 0;font-size:15px;white-space:normal}
+}
+
 </style>
 </head>
 <body>
@@ -134,7 +156,7 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
 <!-- EDIT: name / city / nav. Each dropdown is a list of linkable projects -->
 <header class="bar">
   <a href="index.html">Michael Kriegshauser</a>
-  <nav class="nav" aria-label="Main">
+  <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>\n  <nav class="nav" aria-label="Main">
     <div class="dd">
       <button aria-expanded="false" aria-haspopup="true">Brand/Campaign</button>
       <div class="panel">
@@ -163,7 +185,7 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
         <a href="ibm-quantum-system-one-at-cleveland-clinic.html">Quantum System One <span>Cleveland Clinic</span></a>
       </div>
     </div>
-    <a href="info.html">Info</a>
+    <a href="Info.html">Info</a>
   </nav>
 </header>
 
@@ -231,6 +253,18 @@ document.documentElement.classList.add('js');
   },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
   items.forEach(function(i){io.observe(i)});
 })();
+
+// Tablet/mobile hamburger menu
+(function(){
+  var bar=document.querySelector('.bar'), nav=bar&&bar.querySelector('.nav'), toggle=bar&&bar.querySelector('.menu-toggle');
+  if(!bar||!nav||!toggle)return;
+  function closeMenu(){bar.classList.remove('menu-open');toggle.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+  toggle.addEventListener('click',function(e){e.stopPropagation();var open=bar.classList.toggle('menu-open');toggle.setAttribute('aria-expanded',open?'true':'false');document.body.style.overflow=open?'hidden':'';});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu()});
+  window.addEventListener('resize',function(){if(window.innerWidth>1024)closeMenu()});
+})();
+
 </script>
 </body>
 </html>
