@@ -128,14 +128,16 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
   .js .item .media{clip-path:none}.js .item .media>*{transform:none}.js .item figcaption{opacity:1;transform:none}
 }
 
-/* ---------- selected designs ---------- */
+/* Selected Designs three-column masonry */
 .selected-title{padding-bottom:var(--pad)}
 .selected-intro{border-top:1px solid var(--line);padding:var(--pad);display:grid;grid-template-columns:1fr 1fr 2fr}
 .selected-intro p{grid-column:3;max-width:48ch}
-.selected-title + .selected-intro + .gallery{padding-top:calc(var(--pad)*2)}
-.selected-title + .selected-intro + .gallery .media{background:transparent}
-.selected-title + .selected-intro + .gallery .media img{object-fit:cover}
-@media(max-width:700px){.selected-intro{grid-template-columns:1fr}.selected-intro p{grid-column:auto}}
+.selected-title + .selected-intro + .gallery{display:block;columns:3;column-gap:var(--pad);padding-top:calc(var(--pad)*2)}
+.selected-title + .selected-intro + .gallery .item{display:inline-block;width:100%;margin:0 0 var(--pad);break-inside:avoid;grid-column:auto;vertical-align:top}
+.selected-title + .selected-intro + .gallery .media{aspect-ratio:auto!important;background:transparent}
+.selected-title + .selected-intro + .gallery .media img{position:relative;inset:auto;width:100%;height:auto;object-fit:contain}
+@media(max-width:850px){.selected-title + .selected-intro + .gallery{columns:2}}
+@media(max-width:600px){.selected-title + .selected-intro + .gallery{columns:1}.selected-intro{grid-template-columns:1fr}.selected-intro p{grid-column:auto}}
 
 </style>
 </head>
