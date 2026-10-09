@@ -139,6 +139,17 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
 @media(max-width:850px){.selected-title + .selected-intro + .gallery{columns:2}}
 @media(max-width:600px){.selected-title + .selected-intro + .gallery{columns:1}.selected-intro{grid-template-columns:1fr}.selected-intro p{grid-column:auto}}
 
+/* Selected Designs: subtle image emphasis on hover */
+.selected-title + .selected-intro + .gallery .media img{
+  transition:transform .35s ease;
+  transform-origin:center center;
+}
+@media (hover:hover) and (pointer:fine){
+  .selected-title + .selected-intro + .gallery .item:hover .media img{
+    transform:scale(1.08);
+  }
+}
+
 </style>
 </head>
 <body>
