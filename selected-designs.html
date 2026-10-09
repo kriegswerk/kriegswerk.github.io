@@ -128,14 +128,16 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
   .js .item .media{clip-path:none}.js .item .media>*{transform:none}.js .item figcaption{opacity:1;transform:none}
 }
 
-/* ---------- selected designs ---------- */
+/* Selected Designs three-column masonry */
 .selected-title{padding-bottom:var(--pad)}
 .selected-intro{border-top:1px solid var(--line);padding:var(--pad);display:grid;grid-template-columns:1fr 1fr 2fr}
 .selected-intro p{grid-column:3;max-width:48ch}
-.selected-title + .selected-intro + .gallery{padding-top:calc(var(--pad)*2)}
-.selected-title + .selected-intro + .gallery .media{background:transparent}
-.selected-title + .selected-intro + .gallery .media img{object-fit:cover}
-@media(max-width:700px){.selected-intro{grid-template-columns:1fr}.selected-intro p{grid-column:auto}}
+.selected-title + .selected-intro + .gallery{display:block;columns:3;column-gap:var(--pad);padding-top:calc(var(--pad)*2)}
+.selected-title + .selected-intro + .gallery .item{display:inline-block;width:100%;margin:0 0 var(--pad);break-inside:avoid;grid-column:auto;vertical-align:top}
+.selected-title + .selected-intro + .gallery .media{aspect-ratio:auto!important;background:transparent}
+.selected-title + .selected-intro + .gallery .media img{position:relative;inset:auto;width:100%;height:auto;object-fit:contain}
+@media(max-width:850px){.selected-title + .selected-intro + .gallery{columns:2}}
+@media(max-width:600px){.selected-title + .selected-intro + .gallery{columns:1}.selected-intro{grid-template-columns:1fr}.selected-intro p{grid-column:auto}}
 
 </style>
 </head>
@@ -187,18 +189,20 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
 
   <!-- EDIT: gallery. Layout classes on .item: none = half, wide/full = full width, third, tall, offset (right half). Replace each .media's contents with an <img> or <video>. -->
   <section class="gallery pad">
-      <figure class="item full"><div class="media"><img src="/images/125fab0b-4e30-4ebb-899b-9797c7869b5b_car_16x9.png" alt="" loading="lazy"></div><figcaption><span>SD_01</span></figcaption></figure>
+      <figure class="item full"><div class="media"><img src="/images/BADGE@2x.jpg" alt="" loading="lazy"></div><figcaption><span>SD_01</span></figcaption></figure>
       <figure class="item third"><div class="media"><img src="/images/Scene-1.gif" alt="" loading="lazy"></div><figcaption><span>SD_02</span></figcaption></figure>
       <figure class="item third"><div class="media"><img src="/images/txib.gif" alt="" loading="lazy"></div><figcaption><span>SD_03</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/a91e54b3-8f2e-4342-895e-658e474afda3_car_16x9.png" alt="" loading="lazy"></div><figcaption><span>SD_04</span></figcaption></figure>
-      <figure class="item offset tall"><div class="media"><img src="/images/125fab0b-4e30-4ebb-899b-9797c7869b5b_carw_16x9x5120.png" alt="" loading="lazy"></div><figcaption><span>SD_05</span></figcaption></figure>
-      <figure class="item "><div class="media"><img src="/images/1267e0c0-36a0-45bc-8256-c42fa2ea99ef_carw_16x9x5120.png" alt="" loading="lazy"></div><figcaption><span>SD_06</span></figcaption></figure>
-      <figure class="item wide"><div class="media"><img src="/images/1267e0c0-36a0-45bc-8256-c42fa2ea99ef_car_16x9.png" alt="" loading="lazy"></div><figcaption><span>SD_07</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/125fab0b-4e30-4ebb-899b-9797c7869b5b_carw_16x9x32.png" alt="" loading="lazy"></div><figcaption><span>SD_08</span></figcaption></figure>
+      <figure class="item third"><div class="media"><img src="/images/SECONDARY-LOGO.jpg" alt="" loading="lazy"></div><figcaption><span>SD_04</span></figcaption></figure>
+      <figure class="item offset tall"><div class="media"><img src="/images/12-21brand-proposals-03.png" alt="" loading="lazy"></div><figcaption><span>SD_05</span></figcaption></figure>
+      <figure class="item "><div class="media"><img src="/images/whip-01.png" alt="" loading="lazy"></div><figcaption><span>SD_06</span></figcaption></figure>
+      <figure class="item wide"><div class="media"><img src="/images/tomski-3.jpg" alt="" loading="lazy"></div><figcaption><span>SD_07</span></figcaption></figure>
+      <figure class="item third"><div class="media"><img src="/images/scholz150.jpeg" alt="" loading="lazy"></div><figcaption><span>SD_08</span></figcaption></figure>
       <figure class="item third"><div class="media"><img src="/images/ramshaw.gif" alt="" loading="lazy"></div><figcaption><span>SD_09</span></figcaption></figure>
-      <figure class="item third"><div class="media"><img src="/images/1267e0c0-36a0-45bc-8256-c42fa2ea99ef_carw_16x9x32.png" alt="" loading="lazy"></div><figcaption><span>SD_10</span></figcaption></figure>
-      <figure class="item full"><div class="media"><img src="/images/392eba25-9522-479b-b1e4-412227aee3a4_car_16x9.jpg" alt="" loading="lazy"></div><figcaption><span>SD_11</span></figcaption></figure>
-      <figure class="item offset tall"><div class="media"><img src="/images/a91e54b3-8f2e-4342-895e-658e474afda3_carw_16x9x32.png" alt="" loading="lazy"></div><figcaption><span>SD_12</span></figcaption></figure>
+      <figure class="item third"><div class="media"><img src="/images/mm-af-01.png" alt="" loading="lazy"></div><figcaption><span>SD_10</span></figcaption></figure>
+      <figure class="item full"><div class="media"><img src="/images/insta-finals3.jpg" alt="" loading="lazy"></div><figcaption><span>SD_11</span></figcaption></figure>
+      <figure class="item offset tall"><div class="media"><img src="/images/insta-finals2.jpg" alt="" loading="lazy"></div><figcaption><span>SD_12</span></figcaption></figure>
+      <figure class="item third"><div class="media"><img src="/images/hat-patch.jpg" alt="Selected design SD_13" loading="lazy"></div><figcaption><span>SD_13</span></figcaption></figure>
+      <figure class="item third"><div class="media"><img src="/images/hat-monogram.jpg" alt="Selected design SD_14" loading="lazy"></div><figcaption><span>SD_14</span></figcaption></figure>
   </section>
 
   <!-- EDIT: next project link -->
