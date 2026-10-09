@@ -128,6 +128,26 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
   .js .item .media{clip-path:none}.js .item .media>*{transform:none}.js .item figcaption{opacity:1;transform:none}
 }
 
+/* Selected Designs image hover emphasis: basic CSS zoom in/out */
+.selected-title + .selected-intro + .gallery .item .media{
+  cursor: zoom-in;
+}
+.selected-title + .selected-intro + .gallery .item .media img{
+  transform:scale(1);
+  transform-origin:center;
+  transition:transform .35s ease-in-out;
+}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){
+  .selected-title + .selected-intro + .gallery .item:hover .media img{
+    transform:scale(1.12);
+  }
+}
+@media (hover:none){
+  .selected-title + .selected-intro + .gallery .item .media img{
+    transition:none;
+  }
+}
+
 /* Selected Designs three-column masonry */
 .selected-title{padding-bottom:var(--pad)}
 .selected-intro{border-top:1px solid var(--line);padding:var(--pad);display:grid;grid-template-columns:1fr 1fr 2fr}
