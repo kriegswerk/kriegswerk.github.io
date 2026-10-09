@@ -128,21 +128,31 @@ footer .fine{grid-column:1/-1;margin-top:calc(var(--pad)*3);color:var(--mute);di
   .js .item .media{clip-path:none}.js .item .media>*{transform:none}.js .item figcaption{opacity:1;transform:none}
 }
 
-/* Selected Designs image hover emphasis: basic CSS zoom in/out */
+/* Selected Designs hover preview: enlarged image floats over the grid without reflow */
 .selected-title + .selected-intro + .gallery .item .media{
   cursor: zoom-in;
 }
-.selected-title + .selected-intro + .gallery .item .media img{
-  transform:scale(1);
-  transform-origin:center;
-  transition:transform .35s ease-in-out;
-}
-@media (hover:hover) and (prefers-reduced-motion:no-preference){
+@media (hover:hover){
+  .selected-title + .selected-intro + .gallery .item{
+    position:relative;
+    z-index:0;
+  }
+  .selected-title + .selected-intro + .gallery .item:hover{
+    z-index:20;
+  }
+  .selected-title + .selected-intro + .gallery .item .media img{
+    transform:scale(1);
+    transform-origin:center;
+    transition:transform .25s ease;
+  }
   .selected-title + .selected-intro + .gallery .item:hover .media img{
-    transform:scale(1.12);
+    transform:scale(1.35);
+    position:relative;
+    z-index:21;
+    box-shadow:0 12px 36px rgba(0,0,0,.28);
   }
 }
-@media (hover:none){
+@media (hover:none), (prefers-reduced-motion:reduce){
   .selected-title + .selected-intro + .gallery .item .media img{
     transition:none;
   }
